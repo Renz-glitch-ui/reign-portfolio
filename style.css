@@ -581,6 +581,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-50px);
 }
 
 .image-container {
@@ -2137,6 +2138,7 @@ a.contact-detail-item:hover {
 
   .hero-image {
     order: -1;
+    transform: none;
   }
 
   .hero-description {
