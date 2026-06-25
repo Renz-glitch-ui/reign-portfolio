@@ -665,8 +665,10 @@ img {
 .hero-scroll-indicator {
   position: absolute;
   bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2265,10 +2267,6 @@ a.contact-detail-item:hover {
   /* Fallback background for mobile when video is blocked */
   .yt-bg-wrapper {
     background: radial-gradient(circle at center, #0a1128 0%, #030712 100%);
-  }
-
-  #bg-video {
-    display: none !important;
   }
 
   .about-cards {
