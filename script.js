@@ -26,19 +26,27 @@ window.addEventListener('load', () => {
   const video = document.getElementById('bg-video');
   if (!video) return;
 
-  const START_TIME = 29; // Start at the bright circuit board section
+  const isMobile = window.innerWidth <= 768;
+  const START_TIME = isMobile ? 0 : 29; // Start at the bright circuit board section (0 for mobile to fix iOS black screen bug)
 
   video.muted = true;
+  video.defaultMuted = true;
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
 
   // Jump to the good part once metadata is loaded
   video.addEventListener('loadedmetadata', () => {
-    video.currentTime = START_TIME;
+    if (START_TIME > 0) {
+      video.currentTime = START_TIME;
+    }
     video.play().catch(() => {});
   });
 
   // Also try immediately (for cached videos)
   if (video.readyState >= 1) {
-    video.currentTime = START_TIME;
+    if (START_TIME > 0) {
+      video.currentTime = START_TIME;
+    }
   }
 
   video.play().catch(() => {
