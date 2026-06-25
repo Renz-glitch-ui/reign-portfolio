@@ -322,7 +322,7 @@ img {
   position: relative;
   overflow: hidden;
   background: transparent;
-  padding: 0 2rem;
+  padding: 6rem 2rem 5rem 2rem;
 }
 
 .hero::before {
@@ -663,11 +663,13 @@ img {
 }
 
 .hero-scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
   gap: 0.5rem;
   color: var(--slate);
   font-size: 0.75rem;
@@ -2263,6 +2265,10 @@ a.contact-detail-item:hover {
   /* Fallback background for mobile when video is blocked */
   .yt-bg-wrapper {
     background: radial-gradient(circle at center, #0a1128 0%, #030712 100%);
+  }
+
+  #bg-video {
+    display: none !important;
   }
 
   .about-cards {
